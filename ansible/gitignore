@@ -1,0 +1,4 @@
+.molecule
+.tox
+molecule/default/clouds.yml
+molecule/default/roles

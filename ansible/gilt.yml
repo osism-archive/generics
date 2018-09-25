@@ -12,3 +12,5 @@
       dst: ./
     - src: ansible/tox.ini
       dst: ./
+    - src: ansible/gitignore
+      dst: ./.gitignore
