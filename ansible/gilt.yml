@@ -12,5 +12,3 @@
       dst: ./
     - src: ansible/tox.ini
       dst: ./
-    - src: ansible/.travis.yml
-      dst: ./
