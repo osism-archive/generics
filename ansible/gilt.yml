@@ -14,3 +14,13 @@
       dst: ./
     - src: ansible/gitignore
       dst: ./.gitignore
+    - src: ansible/render-template.py
+      dst: scripts/render-template.py
+    - src: ansible/README.md
+      dst: ./README.md
+      post_commands:
+        - python scripts/render-template.py README.md
+    - src: ansible/travis.yml
+      dst: ./.travis.yml
+      post_commands:
+        - python scripts/render-template.py .travis.yml
