@@ -15,7 +15,7 @@ install:
   - pip install -r requirements.txt
 
 script:
-  - detox
+  - travis_wait 45 detox
 
 notifications:
   irc:
