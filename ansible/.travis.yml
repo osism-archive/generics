@@ -6,7 +6,6 @@ language: python
 cache:
   directories:
     - $HOME/.cache/pip
-    - .tox
 
 before_install:
   - openssl aes-256-cbc -K $encrypted_{{ travis_decrypt_key }}_key -iv $encrypted_{{ travis_decrypt_key }}_iv -in molecule/default/clouds.yml.enc -out molecule/default/clouds.yml -d
