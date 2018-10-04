@@ -9,7 +9,7 @@ def travis_job_status(name):
     try:
         job = name.split("-")[1]
     except:
-        job = name.split("moluecule")[1]
+        job = name.split("molecule")[1]
 
     result = requests.get("https://api.travis-ci.org/v3/job/%s" % job)
     result = result.json()
