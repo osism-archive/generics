@@ -6,7 +6,6 @@ language: python
 cache:
   directories:
     - $HOME/.cache/pip
-    - .tox
 
 before_install:
   - openssl aes-256-cbc -K $encrypted_d4e7d95d08c5_key -iv $encrypted_d4e7d95d08c5_iv -in clouds.yml.enc -out clouds.yml -d
