@@ -4,6 +4,7 @@
 [![Ansible Galaxy](https://img.shields.io/badge/Ansible%20Galaxy-osism.{{ ansible_role_name }}-blue.svg)](https://galaxy.ansible.com/osism/{{ ansible_role_name }}/)
 ![Ansible 2.5](https://img.shields.io/badge/Ansible-2.5-green.png?style=flat)
 ![Ansible 2.6](https://img.shields.io/badge/Ansible-2.6-green.png?style=flat)
+![Ansible 2.7](https://img.shields.io/badge/Ansible-2.7-green.png?style=flat)
 ![Ubuntu 16.04](https://img.shields.io/badge/Ubuntu-16.04-orange.png?style=flat)
 ![Ubuntu 18.04](https://img.shields.io/badge/Ubuntu-18.04-orange.png?style=flat)
 
