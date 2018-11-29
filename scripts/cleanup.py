@@ -1,8 +1,11 @@
 #!/usr/bin/env python
 
+import logging
+
 import openstack
 import requests
 
+logging.basicConfig(format='%(asctime)s - %(message)s', level=logging.INFO, datefmt='%Y-%m-%d %H:%M:%S')
 conn = openstack.connect(cloud='molecule')
 
 def travis_job_status(name):
@@ -21,9 +24,12 @@ def travis_job_status(name):
     else:
         return 1
 
+logging.info("clean up servers")
 for server in conn.compute.servers():
     server_dict = server.to_dict()
     server_name = server_dict["name"]
+
+    logging.info(server_name)
 
     if not server_name.startswith("molecule"):
         continue
@@ -31,9 +37,12 @@ for server in conn.compute.servers():
     if travis_job_status(server_name) == 0:
         conn.compute.delete_server(server_dict["id"], force=True)
 
+logging.info("clean up keypairs")
 for keypair in conn.compute.keypairs():
     keypair_dict = keypair.to_dict()
     keypair_name = keypair_dict["name"]
+
+    logging.info(keypair_name)
 
     if not keypair_name.startswith("molecule"):
         continue
@@ -41,9 +50,12 @@ for keypair in conn.compute.keypairs():
     if travis_job_status(keypair_name) == 0:
         conn.compute.delete_keypair(keypair)
 
+logging.info("clean up security groups")
 for security_group in conn.network.security_groups():
     security_group_dict = security_group.to_dict()
     security_group_name = security_group_dict["name"]
+
+    logging.info(security_group_name)
 
     if not security_group_name.startswith("molecule"):
         continue
