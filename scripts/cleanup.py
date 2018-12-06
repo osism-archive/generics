@@ -32,9 +32,8 @@ for server in conn.compute.servers():
     if not server_name.startswith("molecule"):
         continue
 
-    logging.info(server_name)
-
     if travis_job_status(server_name) == 0:
+        logging.info(server_name)
         conn.compute.delete_server(server_dict["id"], force=True)
 
 logging.info("clean up keypairs")
@@ -45,9 +44,8 @@ for keypair in conn.compute.keypairs():
     if not keypair_name.startswith("molecule"):
         continue
 
-    logging.info(keypair_name)
-
     if travis_job_status(keypair_name) == 0:
+        logging.info(keypair_name)
         conn.compute.delete_keypair(keypair)
 
 logging.info("clean up security groups")
@@ -58,7 +56,15 @@ for security_group in conn.network.security_groups():
     if not security_group_name.startswith("molecule"):
         continue
 
-    logging.info(security_group_name)
-
     if travis_job_status(security_group_name) == 0:
+        logging.info(security_group_name)
         conn.network.delete_security_group(security_group)
+
+logging.info("clean up floating ips")
+for floating_ip in conn.search_floating_ips():
+    floating_ip_dict = dict(floating_ip)
+    floating_ip_name = floating_ip["floating_ip_address"]
+
+    if not floating_ip_dict["attached"]:
+        logging.info(floating_ip_name)
+        conn.delete_floating_ip(floating_ip_dict["id"])
