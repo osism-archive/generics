@@ -2,7 +2,7 @@
 - name: Prepare instance for use with Ansible
   hosts: all
   gather_facts: false
-  no_log: "{{ not lookup('env', 'MOLECULE_DEBUG') | bool }}"
+  no_log: "{{ '{{' }} not lookup('env', 'MOLECULE_DEBUG') | bool {{ '}}' }}"
 
   vars:
     ansible_python_interpreter: /usr/bin/python3
@@ -18,6 +18,13 @@
 
 - name: Playbook for role preparations
   hosts: all
+{% if molecule_needs_docker %}
+  vars:
+    docker_user: ubuntu
 
+  roles:
+    - role: osism.docker
+{%- else %}
   roles: []
   tasks: []
+{%- endif %}
