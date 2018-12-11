@@ -4,6 +4,8 @@
 {% if molecule_needs_docker %}
   vars:
     docker_user: ubuntu
+    docker_registry_mirrors:
+      - https://registry-1.osism.io
 
   roles:
     - role: osism.docker
