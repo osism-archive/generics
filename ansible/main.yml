@@ -8,7 +8,7 @@ galaxy_info:
   platforms:
     - name: Ubuntu
       versions:
-{%- for distribution in distributions %}
+{%- for distribution in distributions|sort %}
         - {{ distribution }}
 {%- endfor %}
   galaxy_tags:
