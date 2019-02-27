@@ -28,3 +28,4 @@
         - python scripts/render-template.py meta/main.yml
         - python scripts/render-template.py molecule/default/prepare.yml
         - python scripts/render-template.py tox.ini
+        - rm -f scripts/render-template.py
