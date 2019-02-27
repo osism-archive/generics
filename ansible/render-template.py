@@ -38,7 +38,7 @@ environment = jinja2.Environment(loader=loader, keep_trailing_newline=True)
 template = environment.get_template(sys.argv[1])
 result = template.render({
     "ansible_role_name": information.get("ansible_role_name", "NONE"),
-    "distributions": information.get("distributions", []),
+    "distributions": information.get("distributions", ["xenial", "bionic"]),
     "DISTRIBUTIONS": DISTRIBUTIONS,
     "molecule_needs_docker": information.get("molecule_needs_docker", False),
     "readme_note": information.get("readme_note", None),
