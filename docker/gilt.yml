@@ -3,22 +3,22 @@
   version: master
   files:
     - src: docker/gilt.yml
-      dst: ./
+      dst: ./gilt.yml
     - src: docker/.gitignore
       dst: ./.gitignore
-    - src: docker/render-template.py
-      dst: ./render-template.py
     - src: docker/README.md
-      dst: ./
+      dst: ./README.md
     - src: docker/.travis.yml
-      dst: ./
+      dst: ./.travis.yml
     - src: docker/scripts/push.sh
       dst: ./scripts/push.sh
     - src: docker/scripts/build.sh
       dst: ./scripts/build.sh
     - src: docker/scripts/travis.sh
       dst: ./scripts/travis.sh
+    - src: docker/render-template.py
+      dst: ./
       post_commands:
-        - python render-template.py .travis.yml
-        - python render-template.py README.md
+        - python3 render-template.py .travis.yml
+        - python3 render-template.py README.md
         - rm -f render-template.py
