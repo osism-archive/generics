@@ -6,7 +6,7 @@ before_install:
 
 env:
   global:
-    - REPOSITORY=osism/template
+    - REPOSITORY=osism/{{ docker_image_name }}
   matrix:
     - VERSION=latest
 
