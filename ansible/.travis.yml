@@ -18,6 +18,9 @@ env:
 {%- for distribution in distributions %}
   - TOX_ENV=ansible27-{{ distribution }}
 {%- endfor %}
+{%- for distribution in distributions %}
+  - TOX_ENV=ansible28-{{ distribution }}
+{%- endfor %}
 
 script:
   - tox -e $TOX_ENV
