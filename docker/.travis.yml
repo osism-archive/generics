@@ -9,7 +9,9 @@ env:
   global:
     - REPOSITORY=osism/{{ docker_image_name }}
   matrix:
-    - VERSION=latest
+{%- for version in versions %}
+    - VERSION={{ version }}
+{%- endfor %}
 
 script:
   - bash scripts/build.sh
