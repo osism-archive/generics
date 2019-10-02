@@ -58,7 +58,7 @@
     - name: Create molecule instance(s)
       os_server:
         cloud: molecule
-        name: "{{ nova.name }}"
+        name: "{{ item.name }}"
         image: "{{ nova.image_name }}"
         flavor: "{{ nova.flavor_name }}"
         security_groups:
