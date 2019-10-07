@@ -5,6 +5,7 @@
 ![Ansible 2.6](https://img.shields.io/badge/Ansible-2.6-green.png?style=flat)
 ![Ansible 2.7](https://img.shields.io/badge/Ansible-2.7-green.png?style=flat)
 ![Ansible 2.8](https://img.shields.io/badge/Ansible-2.8-green.png?style=flat)
+![Ansible 2.9](https://img.shields.io/badge/Ansible-2.9-green.png?style=flat)
 {%- for distribution in distributions %}
 ![{{ DISTRIBUTIONS[distribution]['name'] }}](https://img.shields.io/badge/{{ DISTRIBUTIONS[distribution]['name']|replace(" ", "-") }}-orange.png?style=flat)
 {%- endfor %}
