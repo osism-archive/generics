@@ -27,6 +27,7 @@ result = template.render({
     "distributions": information.get("distributions", ["xenial", "bionic"]),
     "DISTRIBUTIONS": DISTRIBUTIONS,
     "molecule_needs_docker": information.get("molecule_needs_docker", False),
+    "molecule_testinfra": information.get("molecule_testinfra", False),
     "readme_note": information.get("readme_note", None),
     "travis_decrypt_key": information.get("travis_decrypt_key", "NONE")
 })
