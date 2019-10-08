@@ -17,9 +17,6 @@ install:
 
 env:
 {%- for distribution in distributions %}
-  - TOX_ENV=ansible26-{{ distribution }}
-{%- endfor %}
-{%- for distribution in distributions %}
   - TOX_ENV=ansible27-{{ distribution }}
 {%- endfor %}
 {%- for distribution in distributions %}
