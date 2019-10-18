@@ -13,6 +13,9 @@ env:
     - VERSION={{ version }}
 {%- endfor %}
 
+before_script:
+  - bash scripts/lint.sh
+
 script:
   - bash scripts/build.sh
 
