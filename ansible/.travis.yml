@@ -1,9 +1,6 @@
 ---
 dist: bionic
 language: python
-python:
-  - "3.6"
-  - "3.7"
 
 cache:
   directories:
@@ -15,19 +12,33 @@ before_install:
 install:
   - pip install -r requirements.txt
 
-env:
+jobs:
+  include:
 {%- for distribution in distributions %}
-  - TOX_ENV=ansible27-{{ distribution }}
+    - stage: run tests
+      script: tox -e $TOX_ENV
+      env:
+        - TOX_ENV=ansible27-{{ distribution }}
+      python: 3.6
 {%- endfor %}
 {%- for distribution in distributions %}
-  - TOX_ENV=ansible28-{{ distribution }}
+    - stage: run tests
+      script: tox -e $TOX_ENV
+      env:
+        - TOX_ENV=ansible28-{{ distribution }}
+      python: 3.6
 {%- endfor %}
 {%- for distribution in distributions %}
-  - TOX_ENV=ansible29-{{ distribution }}
+    - stage: run tests
+      script: tox -e $TOX_ENV
+      env:
+        - TOX_ENV=ansible29-{{ distribution }}
+      python: 3.6
 {%- endfor %}
-
-script:
-  - tox -e $TOX_ENV
+    - stage: post processing
+      python: 3.6
+      script: bash scripts/trigger-travis.sh osism docker-osism-ansible $TRAVIS_ACCESS_TOKEN "triggered by $TRAVIS_REPO_SLUG ($TRAVIS_COMMIT)"
+      if: branch = "master" AND type = "push"
 
 notifications:
   irc:
