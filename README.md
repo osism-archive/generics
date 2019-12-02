@@ -1,4 +1,4 @@
-# OSISM CI scripts and unified templates
+# travis-master
 
 Central place for CI scripts and unified templates like README
 files.
@@ -16,7 +16,7 @@ files.
 3. The changes can then be applied to all Ansible role and Docker image repositories
    using [Gilt](https://github.com/metacloud/gilt).
 
-![Workflow](https://raw.githubusercontent.com/osism/travis/master/images/workflow.png)
+![Workflow](https://raw.githubusercontent.com/osism/travis-master/master/images/workflow.png)
 
 ## Templates for new projects
 
