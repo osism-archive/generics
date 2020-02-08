@@ -25,7 +25,7 @@ limitations under the License.
 Author information
 ------------------
 
-This role was created by [Betacloud Solutions GmbH](https://betacloud-solutions.de).
+This role was created by [Betacloud Solutions GmbH](https://www.betacloud-solutions.de).
 {%- if readme_note %}
 
 Notes
