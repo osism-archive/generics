@@ -33,6 +33,7 @@ result = template.render({
     "molecule_needs_docker": information.get("molecule_needs_docker", False),
     "molecule_testinfra": information.get("molecule_testinfra", False),
     "readme_note": information.get("readme_note", None),
+    "releases": information.get("releases", ["2.7", "2.8", ".2.9"]),
     "travis_decrypt_key": information.get("travis_decrypt_key", "NONE")
 })
 with open(sys.argv[1], "w+") as fp:

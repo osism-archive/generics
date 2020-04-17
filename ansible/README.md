@@ -2,9 +2,9 @@
 
 [![Build Status](https://travis-ci.org/osism/ansible-{{ ansible_role_name }}.svg?branch=master)](https://travis-ci.org/osism/ansible-{{ ansible_role_name }})
 [![Ansible Galaxy](https://img.shields.io/badge/Ansible%20Galaxy-osism.{{ ansible_role_name|replace("-", "--") }}-blue.svg)](https://galaxy.ansible.com/osism/{{ ansible_role_name }}/)
-![Ansible 2.7](https://img.shields.io/badge/Ansible-2.7-green.png?style=flat)
-![Ansible 2.8](https://img.shields.io/badge/Ansible-2.8-green.png?style=flat)
-![Ansible 2.9](https://img.shields.io/badge/Ansible-2.9-green.png?style=flat)
+{%- for release in releases %}
+![Ansible {{ release }}](https://img.shields.io/badge/Ansible-{{ release }}-green.png?style=flat)
+{%- endfor %}
 {%- for distribution in distributions %}
 ![{{ DISTRIBUTIONS[distribution]['name'] }}](https://img.shields.io/badge/{{ DISTRIBUTIONS[distribution]['name']|replace(" ", "-") }}-orange.png?style=flat)
 {%- endfor %}
