@@ -5,7 +5,7 @@ import jinja2
 import yaml
 
 with open(".information.yml") as fp:
-    information = yaml.load(fp)
+    information = yaml.safe_load(fp)
 
 loader = jinja2.FileSystemLoader(searchpath="")
 environment = jinja2.Environment(loader=loader, keep_trailing_newline=True)
