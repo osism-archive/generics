@@ -14,13 +14,6 @@ jobs:
     - stage: run tests
       script: tox -e $TOX_ENV
       env:
-        - TOX_ENV=ansible27-{{ distribution }}
-      python: 3.6
-{%- endfor %}
-{%- for distribution in distributions %}
-    - stage: run tests
-      script: tox -e $TOX_ENV
-      env:
         - TOX_ENV=ansible28-{{ distribution }}
       python: 3.6
 {%- endfor %}
