@@ -5,6 +5,10 @@ import jinja2
 import yaml
 
 DISTRIBUTIONS = {
+  'xenial': {
+    'image': 'Ubuntu 16.04',
+    'name': 'Ubuntu 16.04'
+  },
   'bionic': {
     'image': 'Ubuntu 18.04',
     'name': 'Ubuntu 18.04'
@@ -12,11 +16,7 @@ DISTRIBUTIONS = {
   'focal': {
     'image': 'Ubuntu 20.04',
     'name': 'Ubuntu 20.04'
-  },
-  'xenial': {
-    'image': 'Ubuntu 16.04',
-    'name': 'Ubuntu 16.04'
-  },
+  }
 }
 
 with open(".information.yml") as fp:
@@ -28,7 +28,7 @@ environment = jinja2.Environment(loader=loader, keep_trailing_newline=True)
 template = environment.get_template(sys.argv[1])
 result = template.render({
     "ansible_role_name": information.get("ansible_role_name", "NONE"),
-    "distributions": information.get("distributions", ["bionic", "focal", "xenial"]),
+    "distributions": information.get("distributions", ["xenial", "bionic", "focal"]),
     "DISTRIBUTIONS": DISTRIBUTIONS,
     "molecule_needs_docker": information.get("molecule_needs_docker", False),
     "molecule_testinfra": information.get("molecule_testinfra", False),
