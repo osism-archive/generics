@@ -15,17 +15,17 @@ jobs:
       script: tox -e $TOX_ENV
       env:
         - TOX_ENV=ansible28-{{ distribution }}
-      python: 3.6
+      python: 3.8
 {%- endfor %}
 {%- for distribution in distributions %}
     - stage: run tests
       script: tox -e $TOX_ENV
       env:
         - TOX_ENV=ansible29-{{ distribution }}
-      python: 3.6
+      python: 3.8
 {%- endfor %}
     - stage: post processing
-      python: 3.6
+      python: 3.8
       script: bash scripts/trigger-travis.sh osism docker-osism-ansible $TRAVIS_ACCESS_TOKEN "triggered by $TRAVIS_REPO_SLUG ($TRAVIS_COMMIT)"
       if: branch = "master" AND type = "push"
 
