@@ -1,7 +1,6 @@
 # Ansible osism.{{ ansible_role_name }}
 
 [![Build Status](https://travis-ci.org/osism/ansible-{{ ansible_role_name }}.svg?branch=master)](https://travis-ci.org/osism/ansible-{{ ansible_role_name }})
-[![Ansible Galaxy](https://img.shields.io/badge/Ansible%20Galaxy-osism.{{ ansible_role_name|replace("-", "--") }}-blue.svg)](https://galaxy.ansible.com/osism/{{ ansible_role_name }}/)
 {%- for release in releases %}
 ![Ansible {{ release }}](https://img.shields.io/badge/Ansible-{{ release }}-green.png?style=flat)
 {%- endfor %}
