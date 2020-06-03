@@ -3,6 +3,8 @@ name: Sync with master repository
 on:
   schedule: 
     - cron: "0 * * * *"
+  repository_dispatch:
+    types: [sync-with-master-repository]
 
 jobs:
   sync-with-master-repository:
