@@ -4,6 +4,8 @@
   files:
     - src: github/workflows/*.yml
       dst: .github/workflows/
+    - src: github/*.yml
+      dst: .github/
     - src: molecule/ansible.cfg
       dst: molecule/default/ansible.cfg
     - src: molecule/*.yml

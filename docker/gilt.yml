@@ -4,6 +4,8 @@
   files:
     - src: github/workflows/*.yml
       dst: .github/workflows/
+    - src: github/*.yml
+      dst: .github/
     - src: docker/gilt.yml
       dst: ./gilt.yml
     - src: docker/.gitignore
