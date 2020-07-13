@@ -4,6 +4,10 @@
   files:
     - src: github/*.yml
       dst: .github/
+    - src: github/workflows/*.yml
+      dst: .github/workflows/
+    - src: github/cleanup.sh
+      dst: scripts/cleanup-github.sh
     - src: molecule/ansible.cfg
       dst: molecule/default/ansible.cfg
     - src: molecule/*.yml
@@ -35,3 +39,5 @@
         - python3 scripts/render-template.py molecule/default/molecule.yml
         - python3 scripts/render-template.py tox.ini
         - rm -f scripts/render-template.py
+        - bash scripts/cleanup-github.sh
+        - rm -f scripts/cleanup-github.sh
