@@ -22,3 +22,18 @@ files.
 
 * Ansible: https://github.com/osism/ansible-template
 * Docker: https://github.com/osism/docker-template
+
+## Manual trigger
+
+An automatic sync is performed every night. This can be started manually with the
+following call.
+
+```
+REPOSITORY=osism/ansible-hosts
+TOKEN=Personal_Access_Token
+
+curl -X POST -H "Authorization: Bearer $TOKEN" \
+    -H 'Accept: application/vnd.github.everest-preview+json' \
+    "https://api.github.com/repos/$REPOSITORY/dispatches" \
+    -d '{"event_type": "sync-with-generics-repository"}'
+```
