@@ -1,7 +1,8 @@
+---
 name: Sync with master repository
 
 on:
-  schedule: 
+  schedule:
     - cron: "0 0 * * *"
   repository_dispatch:
     types: [sync-with-master-repository]
