@@ -16,6 +16,8 @@
       dst: molecule/default/group_vars/
     - src: ansible/*requirements.txt
       dst: ./
+    - src: ansible/LICENSE
+      dst: ./
     - src: ansible/gilt.yml
       dst: ./
     - src: ansible/tox.ini

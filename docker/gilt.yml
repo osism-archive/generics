@@ -8,6 +8,8 @@
       dst: .github/workflows/
     - src: github/cleanup.sh
       dst: scripts/cleanup-github.sh
+    - src: docker/LICENSE
+      dst: ./LICENSE
     - src: docker/gilt.yml
       dst: ./gilt.yml
     - src: docker/.gitignore
