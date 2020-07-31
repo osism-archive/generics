@@ -30,6 +30,7 @@ result = template.render({
     "ansible_role_name": information.get("ansible_role_name", "NONE"),
     "distributions": information.get("distributions", ["xenial", "bionic", "focal"]),
     "DISTRIBUTIONS": DISTRIBUTIONS,
+    "molecule_flavor": information.get("molecule_flavor", None),
     "molecule_needs_docker": information.get("molecule_needs_docker", False),
     "molecule_testinfra": information.get("molecule_testinfra", False),
     "readme_note": information.get("readme_note", None),
