@@ -1,4 +1,4 @@
-# Ansible osism.{{ ansible_role_name }}
+# Ansible role osism.{{ ansible_role_name }}
 
 [![Build Status](https://travis-ci.org/osism/ansible-{{ ansible_role_name }}.svg?branch=master)](https://travis-ci.org/osism/ansible-{{ ansible_role_name }})
 {%- for release in releases %}
@@ -11,7 +11,7 @@
 Author information
 ------------------
 
-This role was created by [Betacloud Solutions GmbH](https://www.betacloud-solutions.de).
+This ansible role was created by [Betacloud Solutions GmbH](https://www.betacloud-solutions.de).
 {%- if readme_note %}
 
 Notes
