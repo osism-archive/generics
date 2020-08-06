@@ -6,6 +6,7 @@ rules:
 
 # NOTE: These files are Jinja2 templates. Therefore they are ignored.
 ignore: |
+  ansible-collection/meta.yml
   ansible/.travis.yml
   ansible/meta.yml
   docker/.travis.yml
