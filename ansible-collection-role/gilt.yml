@@ -2,13 +2,13 @@
 - git: https://github.com/osism/generics.git
   version: master
   files:
-    - src: ansible-collection/gilt.yml
-      dst: ./
     - src: ansible/render-template.py
       dst: ./render-template.py
-    - src: ansible-collection/meta.yml
+    - src: ansible-collection-role/gilt.yml
+      dst: ./
+    - src: ansible-collection-role/meta.yml
       dst: meta/main.yml
-    - src: ansible-collection/README.md
+    - src: ansible-collection-role/README.md
       dst: ./
       post_commands:
         - python3 render-template.py README.md
