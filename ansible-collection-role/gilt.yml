@@ -13,6 +13,4 @@
       post_commands:
         - python3 render-template.py README.md
         - python3 render-template.py meta/main.yml
-        - python3 render-template.py molecule/default/molecule.yml
-        - python3 render-template.py tox.ini
         - rm -f render-template.py
