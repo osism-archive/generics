@@ -2,12 +2,6 @@
 - git: https://github.com/osism/generics.git
   version: master
   files:
-    - src: molecule/ansible.cfg
-      dst: molecule/default/ansible.cfg
-    - src: molecule/*.yml
-      dst: molecule/default/
-    - src: molecule/group_vars/*.yml
-      dst: molecule/default/group_vars/
     - src: ansible-collection/gilt.yml
       dst: ./
     - src: ansible/render-template.py
