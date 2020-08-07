@@ -10,10 +10,6 @@
       dst: molecule/default/group_vars/
     - src: ansible-collection/gilt.yml
       dst: ./
-    - src: ansible/tox.ini
-      dst: ./
-    - src: ansible/.gitignore
-      dst: ./.gitignore
     - src: ansible/render-template.py
       dst: ./render-template.py
     - src: ansible-collection/meta.yml
