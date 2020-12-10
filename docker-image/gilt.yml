@@ -8,27 +8,27 @@
       dst: .github/workflows/
     - src: github/cleanup.sh
       dst: scripts/cleanup-github.sh
-    - src: docker/LICENSE
+    - src: docker-image/LICENSE
       dst: ./LICENSE
-    - src: docker/gilt.yml
+    - src: docker-image/gilt.yml
       dst: ./gilt.yml
-    - src: docker/.gitignore
+    - src: docker-image/.gitignore
       dst: ./.gitignore
-    - src: docker/README.md
+    - src: docker-image/README.md
       dst: ./README.md
-    - src: docker/.travis.yml
+    - src: docker-image/.travis.yml
       dst: ./.travis.yml
-    - src: docker/scripts/push.sh
+    - src: docker-image/scripts/push.sh
       dst: ./scripts/push.sh
-    - src: docker/scripts/build.sh
+    - src: docker-image/scripts/build.sh
       dst: ./scripts/build.sh
-    - src: docker/scripts/lint.sh
+    - src: docker-image/scripts/lint.sh
       dst: ./scripts/lint.sh
-    - src: docker/scripts/security.sh
+    - src: docker-image/scripts/security.sh
       dst: ./scripts/security.sh
-    - src: docker/scripts/travis.sh
+    - src: docker-image/scripts/travis.sh
       dst: ./scripts/travis.sh
-    - src: docker/render-template.py
+    - src: docker-image/render-template.py
       dst: ./
       post_commands:
         - python3 render-template.py .travis.yml
