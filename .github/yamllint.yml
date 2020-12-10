@@ -2,13 +2,10 @@
 extends: default
 
 rules:
+  comments: enable
   line-length: disable
 
 # NOTE: These files are Jinja2 templates. Therefore they are ignored.
 ignore: |
   ansible-collection-role/meta.yml
   ansible-collection/meta.yml
-  ansible/.travis.yml
-  ansible/meta.yml
-  docker/.travis.yml
-  molecule/molecule.yml
