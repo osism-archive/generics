@@ -6,12 +6,6 @@
 ![{{ DISTRIBUTIONS[distribution]['name'] }}](https://img.shields.io/badge/{{ DISTRIBUTIONS[distribution]['name']|replace(" ", "-") }}-orange.png?style=flat)
 {%- endfor %}
 
-Author information
-------------------
-
-This ansible role was created by [Betacloud Solutions GmbH](https://www.betacloud-solutions.de).
-{%- if readme_note %}
-
 Notes
 -----
 
